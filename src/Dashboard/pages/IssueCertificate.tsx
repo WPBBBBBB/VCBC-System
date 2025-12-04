@@ -3,7 +3,7 @@ import { useAdmin } from '../../contexts/AdminContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { supabase } from '../../services/supabase';
 import { FileText, Upload, CheckCircle, AlertCircle, Copy, Check } from 'lucide-react';
-import QRCode from 'qrcode.react';
+import QRCode from 'react-qr-code';
 import './IssueCertificate.css';
 
 interface IssuedCertificate {
@@ -362,10 +362,8 @@ export const IssueCertificate: React.FC = () => {
                 <QRCode
                   value={issuedCertificate.id}
                   size={200}
-                  bgColor="#ffffff"
-                  fgColor="#6b72ff"
-                  level="H"
-                  includeMargin={true}
+                  style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+                  viewBox="0 0 200 200"
                 />
               </div>
               <p className="qr-hint">{t.scanQR}</p>

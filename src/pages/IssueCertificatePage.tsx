@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Upload, Copy, Check, Loader } from 'lucide-react';
-import QRCode from 'qrcode.react';
+import QRCode from 'react-qr-code';
 import { useLanguage } from '../contexts/LanguageContext';
 import PageTransition from '../components/PageTransition';
 import { CertificateService, type Certificate } from '../utils/certificateService';
@@ -250,10 +250,8 @@ export const IssueCertificatePage: React.FC = () => {
                     <QRCode
                       value={issuedCertificate.id}
                       size={256}
-                      bgColor="#ffffff"
-                      fgColor="#5d3fd3"
-                      level="H"
-                      includeMargin={true}
+                      style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+                      viewBox="0 0 256 256"
                     />
                   </div>
                   <p className="qr-hint">
