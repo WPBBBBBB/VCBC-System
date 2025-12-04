@@ -1,99 +1,62 @@
-# 📜 نظام التحقق من الشهادات عبر البلوكشين
+# CVBC System - Certificate Verification Blockchain
 
-## 🌟 نظرة عامة
+نظام متقدم للتحقق من الشهادات باستخدام تقنية البلوكشين والتخزين الموزع
 
-نظام متطور لإصدار والتحقق من الشهادات الرقمية باستخدام تقنية البلوكشين، مع واجهة ويب احترافية وآمنة.
+## المميزات
 
-## ✨ المميزات الرئيسية
+- ✅ تحقق آمن من الشهادات
+- ✅ لوحة تحكم للمشرفين
+- ✅ إصدار شهادات جديدة
+- ✅ سجل التحققات
+- ✅ دعم اللغة العربية والإنجليزية
+- ✅ الوضع الليلي والنهاري
 
-- ✅ **تصميم احترافي** - وضع ليلي/نهاري + استجابة كاملة
-- ✅ **دعم اللغات** - العربية والإنجليزية مع RTL/LTR
-- ✅ **نظام مصادقة** - OAuth مع Google و GitHub و Microsoft
-- ✅ **لوحة تحكم** - إحصائيات وسجل النشاط
-- ✅ **إدارة الشهادات** - إصدار وتحقق وعرض
+## التقنيات المستخدمة
 
-## 🚀 البدء السريع
+- React 18
+- TypeScript
+- Vite
+- Supabase
+- React Router
+- Lucide Icons
+
+## التثبيت المحلي
 
 ```bash
+# تثبيت المكتبات
 npm install
+
+# إنشاء ملف .env.local
+cp .env.example .env.local
+
+# تعديل .env.local بمعلومات Supabase الخاصة بك
+
+# تشغيل المشروع
 npm run dev
 ```
 
-انظر `QUICK_START.md` للمزيد من التفاصيل.
+## النشر على Render
 
-## 📖 الموارد التوثيقية
+1. ارفع المشروع إلى GitHub
+2. اذهب إلى [Render.com](https://render.com)
+3. اختر "New Static Site"
+4. اربط مع GitHub repository
+5. أضف Environment Variables:
+   - `VITE_SUPABASE_URL`
+   - `VITE_SUPABASE_ANON_KEY`
+6. اضغط Deploy
 
-- 📘 `QUICK_START.md` - البدء السريع
-- 📕 `FRONTEND_GUIDE.md` - دليل الواجهة
-- 📙 `DEVELOPMENT_GUIDE.md` - دليل التطوير
-- 📗 `AUTHENTICATION_GUIDE.md` - نظام المصادقة
+## قاعدة البيانات
 
-## 🔐 متطلبات البيئة
+قم بتنفيذ `supabase-schema.sql` في Supabase SQL Editor
 
-أنشئ `.env.local`:
-```env
-VITE_SUPABASE_URL=your-url
-VITE_SUPABASE_ANON_KEY=your-key
-```
+## المشرف الافتراضي
 
+- Username: `admin`
+- Password: `admin123`
 
-## Expanding the ESLint configuration
+⚠️ **مهم:** غيّر كلمة المرور بعد أول تسجيل دخول!
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## الترخيص
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+جميع الحقوق محفوظة © 2025
