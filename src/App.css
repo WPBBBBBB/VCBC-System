@@ -1,0 +1,16 @@
+/* App Layout Styles */
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Page transitions and animations are handled by PageTransition component */
+

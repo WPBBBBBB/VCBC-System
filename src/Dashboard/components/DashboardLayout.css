@@ -1,0 +1,47 @@
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.dashboard-main {
+  flex: 1;
+  margin-left: 280px;
+  padding: 2rem;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1), margin-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* RTL Support */
+[dir="rtl"] .dashboard-main {
+  margin-left: 0;
+  margin-right: 280px;
+}
+
+.dashboard-main.sidebar-collapsed {
+  margin-left: 80px;
+}
+
+[dir="rtl"] .dashboard-main.sidebar-collapsed {
+  margin-left: 0;
+  margin-right: 80px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .dashboard-main {
+    margin-left: 80px;
+  }
+
+  .dashboard-main.sidebar-collapsed {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-main {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}
